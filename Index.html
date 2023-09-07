@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-   <title>Online Poker Simulator</title>
+   <title>The Poker Game</title>
    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
    <link rel="stylesheet" href="css/style.css" type="text/css">
    <!-- -->
@@ -10,18 +10,94 @@
    <link rel="shortcut icon" href="img/chip25.png" />
    <link rel="stylesheet" href="css/setup.css" type="text/css"
          media="only screen and (max-width: 1400px)">
-
-   <script charset="UTF-8" src=js/jsholdem/index.js></script>
-   <script charset="UTF-8" src=js/jsholdem/hands.js></script>
-   <script charset="UTF-8" src=js/jsholdem/bot.js></script>
+   <script charset="UTF-8" src=js/index.js></script>
+   <script charset="UTF-8" src=js/hands.js></script>
+   <script charset="UTF-8" src=js/bot.js></script>
    <script charset="UTF-8" src=js/gui.js></script>
 </head>
-<body onload="parent.init()">
-    <div id="poker_table" class="poker-table" data-uid="">
-        <div id="seat0" class="seat">
+<body onload="parent.init()" style="background-color: white;">
+    <div id="poker_table" class="poker-table" data-uid="" style="visibility: visible; opacity: 1; background-image: url(img/poker_table.png);">
+        <div id="seat0" class="seat" style="visibility: visible;">
             <div class="holecards">
-                <div class="card holecard1"></div>
-                <div class="card holecard2"></div>
+                <div class="card holecard1" style="opacity: 1; background-image: url(&quot;img/jack_of_clubs.png&quot;);"></div>
+                <div class="card holecard2" style="opacity: 1; background-image: url(&quot;img/ace_of_clubs.png&quot;);"></div>
+            </div>
+            <div class="name-chips">
+                <div class="player-name">Ви</div>
+                <div class="chips">$500</div>
+            </div>
+            <div class="bet">Bet:$0 (0)</div>
+        </div>
+        <div id="seat1" class="seat" style="visibility: visible;">
+            <div class="holecards">
+                <div class="card holecard1" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+                <div class="card holecard2" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            </div>
+            <div class="name-chips">
+                <div class="player-name">Анна Корсун</div>
+                <div class="chips">$495</div>
+            </div>
+            <div class="bet">Bet:$5 (5)</div>
+        </div>
+        <div id="seat2" class="seat" style="visibility: visible;">
+            <div class="holecards">
+                <div class="card holecard1" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+                <div class="card holecard2" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            </div>
+            <div class="name-chips">
+                <div class="player-name">Ірина Білик</div>
+                <div class="chips">$490</div>
+            </div>
+            <div class="bet">Bet:$10 (10)</div>
+        </div>
+        <div id="seat3" class="seat" style="visibility: visible;">
+            <div class="holecards">
+                <div class="card holecard1" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+                <div class="card holecard2" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            </div>
+            <div class="name-chips">
+                <div class="player-name" style="color: black; background-color: gold;">Іван Коваленко</div>
+                <div class="chips">$500</div>
+            </div>
+            <div class="bet">Bet:$0 (0)</div>
+        </div>
+        <div id="seat4" class="seat" style="visibility: visible;">
+            <div class="holecards">
+                <div class="card holecard1" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+                <div class="card holecard2" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            </div>
+            <div class="name-chips">
+                <div class="player-name">Леся Українка</div>
+                <div class="chips">$500</div>
+            </div>
+            <div class="bet">Bet:$0 (0)</div>
+        </div>
+        <div id="seat5" class="seat" style="visibility: visible;">
+            <div class="holecards">
+                <div class="card holecard1" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+                <div class="card holecard2" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            </div>
+            <div class="name-chips">
+                <div class="player-name">Людмила Власенко</div>
+                <div class="chips">$500</div>
+            </div>
+            <div class="bet">Bet:$0 (0)</div>
+        </div>
+        <div id="seat6" class="seat" style="visibility: hidden;">
+            <div class="holecards">
+                <div class="card holecard1" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+                <div class="card holecard2" style="opacity: 1; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            </div>
+            <div class="name-chips">
+                <div class="player-name"></div>
+                <div class="chips">$500</div>
+            </div>
+            <div class="bet">Bet:$0 (0)</div>
+        </div>
+        <div id="seat7" class="seat" style="visibility: hidden;">
+            <div class="holecards">
+                <div class="card holecard1" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
+                <div class="card holecard2" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
             </div>
             <div class="name-chips">
                 <div class="player-name"></div>
@@ -29,10 +105,10 @@
             </div>
             <div class="bet"></div>
         </div>
-        <div id="seat1" class="seat">
+        <div id="seat8" class="seat" style="visibility: hidden;">
             <div class="holecards">
-                <div class="card holecard1"></div>
-                <div class="card holecard2"></div>
+                <div class="card holecard1" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
+                <div class="card holecard2" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
             </div>
             <div class="name-chips">
                 <div class="player-name"></div>
@@ -40,87 +116,10 @@
             </div>
             <div class="bet"></div>
         </div>
-        <div id="seat2" class="seat">
+        <div id="seat9" class="seat" style="visibility: hidden;">
             <div class="holecards">
-                <div class="card holecard1"></div>
-                <div class="card holecard2"></div>
-            </div>
-            <div class="name-chips">
-                <div class="player-name"></div>
-                <div class="chips"></div>
-            </div>
-            <div class="bet"></div>
-        </div>
-        <div id="seat3" class="seat">
-            <div class="holecards">
-                <div class="card holecard1"></div>
-                <div class="card holecard2"></div>
-            </div>
-            <div class="name-chips">
-                <div class="player-name"></div>
-                <div class="chips"></div>
-            </div>
-            <div class="bet"></div>
-        </div>
-        <div id="seat4" class="seat">
-            <div class="holecards">
-                <div class="card holecard1"></div>
-                <div class="card holecard2"></div>
-            </div>
-            <div class="name-chips">
-                <div class="player-name"></div>
-                <div class="chips"></div>
-            </div>
-            <div class="bet"></div>
-        </div>
-        <div id="seat5" class="seat">
-            <div class="holecards">
-                <div class="card holecard1"></div>
-                <div class="card holecard2"></div>
-            </div>
-            <div class="name-chips">
-                <div class="player-name"></div>
-                <div class="chips"></div>
-            </div>
-            <div class="bet"></div>
-        </div>
-        <div id="seat6" class="seat">
-            <div class="holecards">
-                <div class="card holecard1"></div>
-                <div class="card holecard2"></div>
-            </div>
-            <div class="name-chips">
-                <div class="player-name"></div>
-                <div class="chips"></div>
-            </div>
-            <div class="bet"></div>
-        </div>
-        <div id="seat7" class="seat">
-            <div class="holecards">
-                <div class="card holecard1"></div>
-                <div class="card holecard2"></div>
-            </div>
-            <div class="name-chips">
-                <div class="player-name"></div>
-                <div class="chips"></div>
-            </div>
-            <div class="bet"></div>
-        </div>
-        <div id="seat8" class="seat">
-            <div class="holecards">
-                <div class="card holecard1"></div>
-                <div class="card holecard2"></div>
-            </div>
-            <div class="name-chips">
-                <div class="player-name"></div>
-                <div class="chips"></div>
-            </div>
-            <div class="bet"></div>
-        </div>
-        <div id="seat9" class="seat">
-            <div class="holecards">
-                <div class="card holecard1"></div>
-                <div class="card holecard2"></div>
+                <div class="card holecard1" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
+                <div class="card holecard2" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
             </div>
             <div class="name-chips">
                 <div class="player-name"></div>
@@ -129,29 +128,29 @@
             <div class="bet"></div>
         </div>
         <div id="board">
-            <div id="flop1" class="card boardcard"></div>
-            <div id="flop2" class="card boardcard"></div>
-            <div id="flop3" class="card boardcard"></div>
-            <div id="turn" class="card boardcard"></div>
-            <div id="river" class="card boardcard"></div>
-            <div id="burn1" class="card boardcard"></div>
-            <div id="burn2" class="card boardcard"></div>
-            <div id="burn3" class="card boardcard"></div>
+            <div id="flop1" class="card boardcard" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            <div id="flop2" class="card boardcard" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            <div id="flop3" class="card boardcard" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            <div id="turn" class="card boardcard" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            <div id="river" class="card boardcard" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            <div id="burn1" class="card boardcard" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            <div id="burn2" class="card boardcard" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
+            <div id="burn3" class="card boardcard" style="opacity: 0; background-image: url(&quot;img/cardback.png&quot;);"></div>
         </div>
         <div id="pot">
             <div id="current-pot"></div>
-            <div id="total-pot"></div>
+            <div id="total-pot">Total pot: 15</div>
         </div>
     </div>
-    <div id="button" class="seat6-button"></div>
-    <div id="history"></div>
+    <div id="button" class="seat0-button" style="visibility: visible;"></div>
+    <div id="history" style="display: none;"></div>
     <div id="action-options">
-        <div id="fold-button" class="action-button"></div>
-        <div id="call-button" class="action-button"></div>
+        <div id="fold-button" class="action-button" style="visibility: hidden;"></div>
+        <div id="call-button" class="action-button" style="visibility: hidden;"></div>
     </div>
     <div id="setup-options">
-        <div id="name-button" class="setup-button">Name</div>
-        <div id="speed-button" class="setup-button">Speed
+        <div id="name-button" class="setup-button" style="visibility: visible;">Name</div>
+        <div id="speed-button" class="setup-button" style="visibility: visible;">Speed
            <div id="speed-selector">
               <select id="speed-options">
                  <option value="0">1</option>
@@ -162,12 +161,14 @@
               </select>
            </div>
         </div>
-        <div id="mode-button" class="setup-button">Dark mode</div>
-        <div id="help-button" class="setup-button">Help</div>
-        <div id="check-button" class="setup-button">Check for updates</div>
+        <div id="mode-button" class="setup-button" style="visibility: visible;">Dark mode</div>
+        <div id="help-button" class="setup-button" style="visibility: visible;">Help</div>
+        <div id="check-button" class="setup-button" style="visibility: visible;">Check for updates</div>
     </div>
-    <div id="quick-raises">Quick Raises</div>
-    <div id="game-response" class="response-normal">Game response</div>
-    <div id="modal-box"></div>
+    <div id="quick-raises" style="visibility: hidden;">Quick Raises</div>
+    <div id="game-response" class="response-normal" style="visibility: visible; color: black;"><font size="+2"><b>Новий раунд</b></font></div>
+    <div id="production-code" style="color: black;">28/Feb/2021</div>
+    <div id="modal-box" style="display: none; opacity: 0.9;"><table align="center"><tbody><tr><td align="center"><b><font size="+4" color="red">So, how many opponents do you want?</font></b><br><font size="+4"><a href="javascript:parent.handle_how_many_reply(1)">1 </a></font>&nbsp;&nbsp;&nbsp;<font size="+4"><a href="javascript:parent.handle_how_many_reply(2)">2 </a></font>&nbsp;&nbsp;&nbsp;<font size="+4"><a href="javascript:parent.handle_how_many_reply(3)">3 </a></font>&nbsp;&nbsp;&nbsp;<font size="+4"><a href="javascript:parent.handle_how_many_reply(4)">4 </a></font>&nbsp;&nbsp;&nbsp;<font size="+4"><a href="javascript:parent.handle_how_many_reply(5)">5 </a></font>&nbsp;&nbsp;&nbsp;<font size="+4"><a href="javascript:parent.handle_how_many_reply(6)">6 </a></font>&nbsp;&nbsp;&nbsp;<font size="+4"><a href="javascript:parent.handle_how_many_reply(7)">7 </a></font>&nbsp;&nbsp;&nbsp;<font size="+4"><a href="javascript:parent.handle_how_many_reply(8)">8 </a></font>&nbsp;&nbsp;&nbsp;<font size="+4"><a href="javascript:parent.handle_how_many_reply(9)">9 </a></font>&nbsp;&nbsp;&nbsp;</td></tr></tbody></table></div>
+
 </body>
 </html>
