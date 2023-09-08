@@ -98,7 +98,7 @@ function handle_how_many_reply (opponents) {
 function ask_how_many_opponents () {
   var quick_values = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   var asking = "<b><font size=+4 color=red>" +
-               "So, how many opponents do you want?" +
+               "Скільки оппонетів обераемо?" +
                "</font></b><br>";
   for (var i = 0; i < 9; i++) {
     if (quick_values[i]) {
@@ -140,16 +140,16 @@ function new_game () {
 
 function new_game_continues (req_no_opponents) {
   var my_players = [
-                    new player("Іван Коваленко", 0, "", "", "", 0, 0),
-                    new player("Анна Корсун", 0, "", "", "", 0, 0),
-                    new player("Дарина Тютюнник", 0, "", "", "", 0, 0),
-                    new player("Педро Порошенко", 0, "", "", "", 0, 0),
+                    new player("Дарина Коваль", 0, "", "", "", 0, 0),
+                    new player("Наталія Дорош", 0, "", "", "", 0, 0),
+                    new player("Олександра Панащенко", 0, "", "", "", 0, 0),
+                    new player("Каріна Геллер", 0, "", "", "", 0, 0),
                     new player("", 0, "", "", "", 0, 0),
-                    new player("Людмила Власенко", 0, "", "", "", 0, 0),
-                    new player("Володимир Летучій", 0, "", "", "", 0, 0),
+                    new player("Анастасія Старовойтова", 0, "", "", "", 0, 0),
+                    new player("Владислава Кушнір", 0, "", "", "", 0, 0),
                     //  Żółć - Grzegorz Brzęczyszczykiewicz
-                    new player("Ірина Білик", 0, "", "", "", 0, 0),
-                    new player("Леся Українка", 0, "", "", "", 0, 0)
+                    new player("Владислав Василенко", 0, "", "", "", 0, 0),
+                    new player("Евген Коваленко", 0, "", "", "", 0, 0)
                    ];
 
   players = new Array(req_no_opponents + 1);
@@ -761,19 +761,19 @@ function handle_end_of_round () {
 
   if (human_loses == 1) {
     var ending = NUM_ROUNDS == 1 ? "1 deal." : NUM_ROUNDS + " deals.";
-    my_pseudo_alert("Sorry, you busted " + players[0].name + ".\n\n" +
+    my_pseudo_alert("Вибачте, ви все програли! " + players[0].name + ".\n\n" +
                     elapsed_time + ", " + ending);
   } else {
     num_playing = number_of_active_players();
     if (num_playing < 2) {
-      var end_msg = "GAME OVER!";
+      var end_msg = "Гра скінчилась!";
       var over_ending = NUM_ROUNDS == 1 ? "1 deal." : NUM_ROUNDS + " deals.";
       if (has_money(0)) {
-        end_msg += "\n\nYOU WIN " + players[0].name.toUpperCase() + "!!!";
+        end_msg += "\n\nВИ ПЕРЕМОГЛИ " + players[0].name.toUpperCase() + "!!!";
       } else {
-        end_msg += "\n\nSorry, you lost.";
+        end_msg += "\n\nВібачте, ви програли.";
       }
-      my_pseudo_alert(end_msg + "\n\nThis game lasted " + elapsed_time + ", " +
+      my_pseudo_alert(end_msg + "\n\nЦя гра тривала:  " + elapsed_time + ", " +
                       over_ending);
     }
   }
